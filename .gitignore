@@ -1,0 +1,20 @@
+# Directories
+node_modules/
+dist/
+build/
+Keys/
+
+# Logs
+logs/
+*.log
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+
+# Editor and IDE files
+.vscode/
+.idea/
