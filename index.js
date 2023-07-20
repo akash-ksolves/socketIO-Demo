@@ -17,7 +17,6 @@ const https = require('https').createServer(secureOptions, app);
 const io = require('socket.io')(https, corsOptions);
 
 const PORT = process.env.PORT || 8088;
-
 // Handle WebSocket connections
 
 io.on('connection', (socket) => {
@@ -45,6 +44,10 @@ io.on('connection', (socket) => {
 		// io.sockets.in(room).emit('message', message);
 		// console.log("rooms", io.sockets.adapter.rooms);
 		// console.log(io.sockets.adapter.rooms.get(socket.id));
+	});
+	// Handle WebSocket messages
+	socket.on('message', (message) => {
+		io.sockets.in(room).emit('message', message);
 	});
 
 	// Handle WebSocket disconnections
